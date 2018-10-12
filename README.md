@@ -6,4 +6,4 @@ In the repo folder run
 packer validate Windows-server.json
 #######
 If validation is done build image using 
-pcaker build Windows-server.json
+packer build Windows-server.json
