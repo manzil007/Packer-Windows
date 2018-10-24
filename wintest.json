@@ -1,0 +1,18 @@
+{
+        "builders": [{
+                "type": "amazon-ebs",
+                "region": "us-west-1",
+                "instance_type": "t2.micro",
+                "source_ami": "ami-08f6003bf4d50fe60",
+                "ami_name": "Bamboo Server 6.1 {{timestamp}}",
+                "user_data_file": "./scripts/SetUpWinRM.ps1",
+                "communicator": "winrm",
+                "winrm_username": "Administrator",
+                "winrm_password": "SuperS3cr3t!"
+        }],
+        "provisioners": [{
+                "type": "powershell",
+                "scripts": "./scripts/SetUpDevTools.ps1"
+                
+        }]        
+}
